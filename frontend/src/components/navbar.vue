@@ -65,6 +65,7 @@ const handleLogout = () => {
       <template v-if="!isLoggedIn">
         <li><button class="btn" @click="goToRegister">Register</button></li>
         <li><button class="btn" @click="goToLogin">Login</button></li>
+        <li class="btn"><router-link to="/recommendations">AI Recommendations</router-link></li>
       </template>
 
       <template v-else>

@@ -1,8 +1,11 @@
 import { Router } from "express";
 import * as movieController from "../controllers/movieController.js";
+import { recommendMovies } from "../controllers/aiController.js";
 import { authenticateJWT, authorizeAdmin } from "../middlewares/authMiddleware.js";
 
 const router = Router();
+
+router.post("/recommend", recommendMovies);
 
 // Publicly viewable
 router.get("/", movieController.getMovies);

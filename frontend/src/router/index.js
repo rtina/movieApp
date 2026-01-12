@@ -6,11 +6,18 @@ import AdminDashboard from '@/views/admin/AdminDashboard.vue'; // Ensure these i
 import AdminStatsGrid from '@/views/admin/AdminStatsGrid.vue';
 import ManageMovies from '@/views/admin/ManageMovies.vue';
 import ManageUsers from '@/views/admin/ManageUsers.vue';
+import RecommendationView from '@/views/RecommendationView.vue';
 
 const routes = [
   { path: '/', name: 'home', component: Homeview },
   { path: '/register', name: 'register', component: Register },
   { path: '/login', name: 'login', component: Login },
+  {
+    path: '/recommendations',
+    name: 'Recommendations',
+    component: RecommendationView,
+    meta: { requiresAuth: true } // Ensures only logged-in users see it
+  },
   {
     path: '/admin',
     component: AdminDashboard,
